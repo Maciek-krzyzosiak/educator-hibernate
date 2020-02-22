@@ -5,11 +5,10 @@ import javax.persistence.*;
 @Entity(name = "hola")
 public class car {
 
-    @Id
-    @GeneratedValue
+
     private long id;
 
-    @Access(value = AccessType.PROPERTY)
+//    @Access(value = AccessType.PROPERTY)
 //    @Basic(optional = false)
     private String brand;
 //    @Column(nullable = false)
@@ -41,7 +40,8 @@ public class car {
                 ", secondHand=" + secondHand +
                 '}';
     }
-
+    @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
