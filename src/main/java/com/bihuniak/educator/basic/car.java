@@ -28,4 +28,16 @@ public class car {
 
     public car() {
     }
+
+    @Override
+    public String toString() {
+        return "car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", wheels=" + wheels +
+                ", engineCapacity=" + engineCapacity +
+                ", secondHand=" + secondHand +
+                '}';
+    }
 }
