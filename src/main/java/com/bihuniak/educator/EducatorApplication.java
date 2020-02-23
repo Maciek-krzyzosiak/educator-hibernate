@@ -1,20 +1,14 @@
 package com.bihuniak.educator;
 
-import com.bihuniak.educator.Human.Address;
-import com.bihuniak.educator.Human.Human;
-import com.bihuniak.educator.Human.HumanRepository;
-import com.bihuniak.educator.Human.Sex;
-import com.bihuniak.educator.basic.car;
-import com.bihuniak.educator.basic.MyFirstRepository;
+import com.bihuniak.educator.Human.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
-import java.util.Date;
-
-import static java.util.Arrays.asList;
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class EducatorApplication {
@@ -31,8 +25,8 @@ public class EducatorApplication {
 		Human janusz = new Human("Janusz",
 				"Tkacz",
 				Sex.SECRET,
-				new Date(1980, 10, 10),
-				new Address("Wagonowa", "Wrocław", "POLAND", "44-444"));
+				LocalDate.of(1980,10,10),
+				new Address("Wagonowa", "Władysławowo", "POLAND", new PostCode("12-439","Wrocław")));
 		humanRepository.save(janusz);
 	}
 }
