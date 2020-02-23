@@ -12,16 +12,13 @@ public class Employee {
     private String surname;
     private String position;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Department department;
 
     public Employee() {
     }
 
-    public Employee(String surname, String position, Department department) {
+    public Employee(String surname, String position) {
         this.surname = surname;
         this.position = position;
-        this.department = department;
     }
 
     @Override
@@ -30,7 +27,6 @@ public class Employee {
                 "id=" + id +
                 ", surname='" + surname + '\'' +
                 ", position='" + position + '\'' +
-                ", department=" + department +
                 '}';
     }
 }

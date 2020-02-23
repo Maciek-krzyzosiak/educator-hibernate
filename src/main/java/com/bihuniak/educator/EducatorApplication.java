@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
+import static java.util.Arrays.asList;
+
 
 @SpringBootApplication
 public class EducatorApplication {
@@ -28,14 +30,20 @@ public class EducatorApplication {
 
 	@PostConstruct
 	public void init() {
-//		Department department = new Department("Marketing", "Wrocław", 5);
-//		Employee employee = new Employee("Januszek", "Head of Company", department);
-//		department.setEmployee(employee);
-//
-//		departmentRepository.save(department);
+		Employee employee1 = new Employee("Januszek", "Designer");
+		Employee employee2 = new Employee("Maciuszek", "Head of Designers");
+		Employee employee3 = new Employee("Niemaciuszek", "Art Master");
+
+		Department department = new Department(
+				"Marketing",
+				"Wrocław",
+				5,
+				asList(employee1, employee2,employee3));
+
+		departmentRepository.save(department);
 //		employeeRepository.save(employee);
 //		System.out.println(departmentRepository.findById(5L).get());
-		System.out.println(employeeRepository.findById(6L).get());
+//		System.out.println(employeeRepository.findById(6L).get());
 	}
 
 
