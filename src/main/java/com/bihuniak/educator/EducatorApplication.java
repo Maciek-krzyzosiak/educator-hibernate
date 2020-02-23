@@ -10,6 +10,8 @@ import javax.annotation.PostConstruct;
 
 import java.time.LocalDate;
 
+import static java.util.Arrays.asList;
+
 @SpringBootApplication
 public class EducatorApplication {
 
@@ -26,7 +28,11 @@ public class EducatorApplication {
 				"Tkacz",
 				Sex.SECRET,
 				LocalDate.of(1980,10,10),
-				new Address("Wagonowa", "Władysławowo", "POLAND", new PostCode("12-439","Wrocław")));
+				new Address("Wagonowa", "Władysławowo", "POLAND"),
+				asList("123456789","987654321"),
+				asList(new Address("Cukierkowa", "Rokosowo", "POLAND"),
+						new Address("Siemano", "Kolano", "AMERYCZKA"))
+				);
 		humanRepository.save(janusz);
 	}
 }
